@@ -1,0 +1,315 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+    <ion-title>
+      Personal Assessment of COVID Expectation (PACE)
+    </ion-title>
+    <ion-title>
+      Prepared by Alexander Dumont (Ph.D. Bioengineering)
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container2">
+    <strong>Check COVID risks locally and for personal situations using this app!</strong>
+  </div>
+
+<div id = "container1">
+
+<!-- Item Dividers in a List -->
+<ion-list>
+ <ion-list-header>
+    <ion-label>
+      Pre-Conditions
+    </ion-label>
+  </ion-list-header>
+
+
+  <ion-item>
+    <ion-label>
+      Cancer
+    </ion-label>
+       <ion-toggle [(ngModel)]="isCancer" placeholder="Select One" (ionChange)="updateCancer($event)"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      COPD
+    </ion-label>
+       <ion-toggle [(ngModel)]="isCOPD" placeholder="Select One" (ionChange)="updateCOPD($event)"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Chronic Kidney Disease
+    </ion-label>
+           <ion-toggle [(ngModel)]="isKidney" placeholder="Select One" (ionChange)="updateKidney($event)"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Immunocompromised
+    </ion-label>
+           <ion-toggle [(ngModel)]="isImmuno" placeholder="Select One" (ionChange)="updateImmuno($event)"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Obesity
+    </ion-label>
+           <ion-toggle [(ngModel)]="isObese" placeholder="Select One" (ionChange)="updateObese($event)"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Heart Condition
+    </ion-label>
+           <ion-toggle [(ngModel)]="isHeart" placeholder="Select One" (ionChange)="updateHeart($event)"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Diabetes
+    </ion-label>
+           <ion-toggle [(ngModel)]="isDiab" placeholder="Select One" (ionChange)="updateDiabetes($event)"></ion-toggle>
+  </ion-item>
+
+    <ion-item>
+    <ion-label>
+      Sickle Cell Disease
+    </ion-label>
+           <ion-toggle [(ngModel)]="isSickle" placeholder="Select One" (ionChange)="updateSickle($event)"></ion-toggle>
+  </ion-item>
+
+</ion-list>
+
+
+<!-- Item Dividers in a List -->
+<ion-list>
+ <ion-list-header>
+    <ion-label>
+      Body Metrics
+    </ion-label>
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>
+      Age (years)
+    </ion-label>
+     <ion-item>
+      <ion-input [(ngModel)]="age" (keypress)="numberOnlyValidation($event)" placeholder="Select One" (ionChange)="updateAge($event)"></ion-input>
+    </ion-item>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Height (cm)
+    </ion-label>
+     <ion-item>
+      <ion-input [(ngModel)]="height" (keypress)="numberOnlyValidation($event)" placeholder="Select One" (ionChange)="updateHeight($event)"></ion-input>
+    </ion-item>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Weight (Kg)
+    </ion-label>
+     <ion-item>
+      <ion-input [(ngModel)]="weight" (keypress)="numberOnlyValidation($event)" placeholder="Select One" (ionChange)="updateWeight($event)"></ion-input>
+    </ion-item>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Gender</ion-label>
+    <ion-select [(ngModel)]="gender" placeholder="Select One" (ionChange)="updateGender($event)">
+      <ion-select-option value="female">Female</ion-select-option>
+      <ion-select-option value="male">Male</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Race</ion-label>
+    <ion-select [(ngModel)]="race" placeholder="Select One" (ionChange)="updateRace($event)">
+      <ion-select-option value="hispanic">Hispanic</ion-select-option>
+      <ion-select-option value="asian">Asian</ion-select-option>
+      <ion-select-option value="black">Black</ion-select-option>
+      <ion-select-option value="white">White</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+
+<!-- Item Dividers in a List -->
+<ion-list>
+ <ion-list-header>
+    <ion-label>
+      Location
+    </ion-label>
+  </ion-list-header>
+
+<ion-item>
+    <ion-label>Region</ion-label>
+    <ion-select [(ngModel)]="region" placeholder="Select One" (ngModelChange)="updateRegion($event)">
+      <ion-select-option value="northeast">NorthEast</ion-select-option>
+      <ion-select-option value="southwest">South</ion-select-option>
+      <ion-select-option value="west">West</ion-select-option>
+      <ion-select-option value="midwest">MidWest</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+</ion-list>
+
+
+<!-- Item Dividers in a List -->
+<ion-list inset="true">
+ <ion-list-header>
+    <ion-label color="danger" >
+      Activity
+    </ion-label>
+  </ion-list-header>
+
+<ion-item>
+  <ion-label>Activity Performed</ion-label>
+  <ion-select [(ngModel)]="activity" placeholder="Select One" (ngModelChange)="updateActivity($event)">
+    <ion-select-option value="1">opening the mail</ion-select-option>
+
+    <ion-select-option value="2">getting restaurant takeout</ion-select-option>
+    <ion-select-option value="2">pumping gasoline</ion-select-option>
+    <ion-select-option value="2">playing tennis</ion-select-option>
+    <ion-select-option value="2">going camping</ion-select-option>
+
+    <ion-select-option value="3">grocery shopping</ion-select-option>
+    <ion-select-option value="3">going for a walk, run, or bike ride with otherst</ion-select-option>
+    <ion-select-option value="3">playing golf</ion-select-option>
+
+    <ion-select-option value="4">staying at a hotel for two nights</ion-select-option>
+    <ion-select-option value="4">staying in a doctor's waiting room</ion-select-option>
+    <ion-select-option value="4">going to a library or museum</ion-select-option>
+    <ion-select-option value="4">eating in a restaurant (outside)</ion-select-option>
+    <ion-select-option value="4">walking in a busy downtown</ion-select-option>
+    <ion-select-option value="4">spending an hour at a playground</ion-select-option>
+
+    <ion-select-option value="5">having dinner at someone's house</ion-select-option>
+    <ion-select-option value="5">attending a backyard barbecue</ion-select-option>
+    <ion-select-option value="5">going to the beach</ion-select-option>
+    <ion-select-option value="5">shopping at a mall</ion-select-option>
+
+    <ion-select-option value="6">sending kids to school, camp, or day care</ion-select-option>
+    <ion-select-option value="6">working a week in an office building</ion-select-option>
+    <ion-select-option value="6">swimming in a public pool</ion-select-option>
+    <ion-select-option value="6">visiting an elderly relative or friend in their home</ion-select-option>
+
+    <ion-select-option value="7">going to a hair salon or barbershop</ion-select-option>
+    <ion-select-option value="7">attending a wedding or funeral</ion-select-option>
+    <ion-select-option value="7">eating in a restaurant (inside)</ion-select-option>
+    <ion-select-option value="7">traveling by plane</ion-select-option>
+    <ion-select-option value="7">playing basketball</ion-select-option>
+    <ion-select-option value="7">playing football</ion-select-option>
+    <ion-select-option value="7">hugging or shaking hands when greeting a friend</ion-select-option>
+
+    <ion-select-option value="8">eating at a buffet</ion-select-option>
+    <ion-select-option value="8">working out at the gym</ion-select-option>
+    <ion-select-option value="8">going to an amusement park</ion-select-option>
+    <ion-select-option value="8">going to a movie theater</ion-select-option>
+
+    <ion-select-option value="9">attending a large music concert</ion-select-option>
+    <ion-select-option value="9">going to a sports stadium</ion-select-option>
+    <ion-select-option value="9">attending a religious service</ion-select-option>
+    <ion-select-option value="9">going ot a bar</ion-select-option>
+
+
+
+  </ion-select>
+
+</ion-item>
+
+<ion-item>
+  <ion-label>Mask used?</ion-label>
+  <ion-select [(ngModel)]="isMaskUsed" placeholder="Select One" (ngModelChange)="updateMaskUsed($event)">
+    <ion-select-option value="true">Yes</ion-select-option>
+    <ion-select-option value="false">No</ion-select-option>
+  </ion-select>
+</ion-item>
+
+<ion-item>
+  <ion-label>Social Distancing Followed?</ion-label>
+  <ion-select [(ngModel)]="isSDF" placeholder="Select One" (ngModelChange)="updateSDF($event)">
+    <ion-select-option value="true">Yes</ion-select-option>
+    <ion-select-option value="false">No</ion-select-option>
+  </ion-select>
+</ion-item>
+
+<ion-item>
+<ion-label>Frequent Hand Washing?</ion-label>
+<ion-select [(ngModel)]="isWH" placeholder="Select One" (ngModelChange)="updateWH($event)">
+  <ion-select-option value="true">Yes</ion-select-option>
+  <ion-select-option value="false">No</ion-select-option>
+</ion-select>
+</ion-item>
+
+<ion-item>
+<ion-label>Press the red button to submit task into your history</ion-label>
+    <ion-button color="primary" expand="block" (click)="previewEvent($event)">Preview Activity</ion-button>
+    <ion-button color="danger" expand="block" (click)="logEvent($event)">Submit Activity</ion-button>
+</ion-item>
+
+</ion-list>
+
+<ion-row>
+    <ion-col>
+       <div class="chart-wrapper">
+            <canvas baseChart
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]=""
+                [colors]=""
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                [plugins]="">
+            </canvas>
+        </div>
+    </ion-col>
+</ion-row>
+
+<!-- Item Dividers in a List -->
+<ion-list>
+
+ <ion-list-header>
+    <ion-label>
+      Delete All Past Activities
+    </ion-label>
+  </ion-list-header>
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+            <ion-button color="primary" expand="block" (click)="deleteLogs($event)">Delete Activities</ion-button>
+      </ion-label>
+  </ion-item>
+
+
+</ion-list>
+<!-- Item Dividers in a List -->
+<ion-list>
+
+ <ion-list-header>
+    <ion-label>
+      History
+    </ion-label>
+  </ion-list-header>
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+    History has not yet been implemented. However, it is our view that this will be an important next step both for viewing potenital COVID risk, and for potentially editing the list of COVID interactions after having submitted the interaction, which as of now, is set in stone.
+  </ion-label>
+  </ion-item>
+
+
+</ion-list>
+
+  </div>
+</ion-content>
