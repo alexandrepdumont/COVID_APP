@@ -11,7 +11,7 @@ The activities list is from the following graphic:
 ![Activities List](covid_activity.jpg)
 
 And the probability of showing COVId symptoms comes from the CDC weekly news on COVID (https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html)
-
+![COVID Probabilities](race_and_age.jpg)
 
 
 
