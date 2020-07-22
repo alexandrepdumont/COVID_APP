@@ -9,9 +9,21 @@ Some of the things I would like to work on in the future are the following:
 
 The activities list is from the following graphic:
 ![Activities List](covid_activity.jpg)
+The are 9 different level of activities, which are converted to 1/9 for the lowest exposure activites, all the way to 9/9 for the highest risk activity. All the actvities are available in the drop-down menu of the app.
 
 And the probability of showing COVId symptoms comes from the CDC weekly news on COVID (https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html)
 ![COVID Probabilities](race_and_age.PNG)
+
+The gender incidence rate was determined by the article:  Gender Differences in Patients With COVID-19: Focus on Severity and Mortality (https://www.frontiersin.org/articles/10.3389/fpubh.2020.00152/full). 
+
+The pre-conditions are taken into acccount by calculating an impact factor, which is simply the number of pre-conditions the user has. If the user has 2 pre-conditions, such as having diabetes and being obese, then the amplification factor is 3 (1+isDiab+isOb). 
+
+The precautions start off with a base ratio of 0.5 (so there is a 100% chance of getting the virus), and 12.5% gets subtracted for each precautionary step taken. 
+
+An unsigned apk of the app is available at: https://drive.google.com/drive/folders/15O6EDGBurLHvugzKDhGVGpEsMPz5RW1n?usp=sharing
+
+
+
 
 
 
