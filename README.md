@@ -8,5 +8,5 @@ Some of the things I would like to work on in the future are the following:
 3.	More personalized curves based on demographics. For now, the curve is an offset normal distribution set to be 8 days in the future (based on CDC’s statement that COVID symptoms take 2-14 days to set in), with 2 day standard deviation (so that 99% of the curve is from 2-14 days).  
 
 The activities come from the following list:
-![GitHub Logo](/images/logo.png)
+![Activities List](covid_activity.jpg)
 Format: ![Alt Text](url)
