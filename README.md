@@ -9,4 +9,5 @@ Some of the things I would like to work on in the future are the following:
 
 The activities come from the following list:
 ![Activities List](covid_activity.jpg)
-Format: ![Alt Text](url)
+
+
